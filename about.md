@@ -4,12 +4,8 @@ title: About
 permalink: /about/
 ---
 
-Some information about you!
-
-### More Information
-
-A place to include any other types of information that you'd like to include about yourself.
+Hey! I'm a web developer who sometimes branches into other disciplines. I made www.akrito.com, a site for sharing stories online. This is a blog where I'll talk about programming-related goals and adventures. 
 
 ### Contact me
 
-[email@domain.com](mailto:email@domain.com)
+[acreechristopher@gmail.com](mailto:acreechristopher@gmail.com)
