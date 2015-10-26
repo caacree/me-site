@@ -5,7 +5,7 @@ title: Lessons from a Kaggle Competition
 
 I'm currently in the final days of the [Liberty Mutual Group: Property Inspection Prediction](https://www.kaggle.com/c/liberty-mutual-group-property-inspection-prediction) competition on Kaggle, and it seems a good time to reflect on some of takeaways from my initial foray into the field. 
 
-Before diving in, I'll mention that I used Python 3.4 for all my programming, though R seems to work fine for many people as well. In the competition forums, nearly everyone seems to use one of the two. 
+Before diving in, I'll mention that I used Python 3 throughout my work, though R seems to work fine for many people as well. In the competition forums, nearly everyone seems to use one of the two. 
 
 ### The Competition
 
@@ -31,8 +31,8 @@ When approaching the training set, I first had to deal with the categorical vari
 
 To check for feature interaction and quadratic effects, I ran sci-kit learn's Polynomial processor on the data. I should note that this would be terribly impractical in a dataset with more features, and testing added variables one or two at a time would be far more efficient. To pare down the ballooning dataset after category encoding and polynomial effects, I cross-referenced Random Forest and Gradient Boosting feature importances, linear model's coefficients, and the results from a Boruta analysis (which also uses Random Forest feature importance, but in a gradual and systematic way). (Note: the boruta analysis was extremely slow and one of the few parts that actually required a specialized EC2 instance, where it required several hours). This allowed me to prune down the engineered features into just the useful ones. 
 
-One potential solution to the Gini problem was to modify the data to emphasize higher scores. I used the (recommended) [UnbalancedDataset](https://github.com/fmfn/UnbalancedDataset) package to try a few methods to give greater weight to higher Hazard Scores. Among the methods tried, a multi-tiered SMOTE over-sampler showed the most promise, but still performed roughly equal to or slightly worse than the original training data across all models. The fact that nearly doubling the sample size didn't affect performance says to me that there are probably gains to be made if I could figure out the right combination. Perhaps using the equation behind the Gini / Lorenz curve. 
+One potential solution to the Gini problem was to modify the data to emphasize higher scores. I used the [UnbalancedDataset](https://github.com/fmfn/UnbalancedDataset) package to try a few methods to give greater weight to higher Hazard Scores. It seemed a multi-tiered SMOTE over-sampler showed the most promise, but still performed roughly equal to or slightly worse than the original training data across all models. However, The fact that approximately doubling the sample size didn't affect performance says to me that there are probably gains to be made if I could figure out the right combination. Perhaps using the equation behind the Gini / Lorenz curve. 
 
 
 
-That's enough for one post! Later I can talk more about how I approached model selection and, my current task, ensembling. 
+That's enough for one post! 
