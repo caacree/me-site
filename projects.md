@@ -1,8 +1,10 @@
 ---
 layout: page
-title: About
+title: Projects
 permalink: /projects/
 ---
+This page only contains projects I have independently undertaken. I am responsible for all design, coding, deployment, and systems monitoring. 
+
 
 [Akrito](https://www.akrito.com/) is an online publishing site where anyone can write a story one chapter at a time. It features flexible pricing models like "pay only for the latest chapter" in addition to allowing normal paid and free stories. Automatic ebook generation, email updates to story followers, and a "quick start" interface make writing and reading easy. This was originally built as a prospective for general licensing of fanfiction, but no major brands have taken the leap. 
 
