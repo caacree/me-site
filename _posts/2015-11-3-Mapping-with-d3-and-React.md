@@ -49,4 +49,4 @@ And here's a couple other random notes from this project:
 		t[0] = Math.min(width / 2 * (s-factors[0]), Math.max(width / 2 * (factors[3]-s), t[0]));
 		t[1] = t[1] = Math.min(height / 2 * (s - factors[2]) + 230 * s, Math.max(height / 2 * (factors[1] - s) - 230 * s, t[1]));
  ```
-  Beautiful. 
+ Beautiful. 
