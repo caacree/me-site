@@ -3,7 +3,7 @@ layout: post
 title: Lessons from a Kaggle Competition
 ---
 
-I'm currently in the final days of the [Liberty Mutual Group: Property Inspection Prediction](https://www.kaggle.com/c/liberty-mutual-group-property-inspection-prediction) competition on Kaggle, and it seems a good time to reflect on some of takeaways from my initial foray into the world of competitive data analysis. 
+I'm currently in the final week of the [Liberty Mutual Group: Property Inspection Prediction](https://www.kaggle.com/c/liberty-mutual-group-property-inspection-prediction) competition on Kaggle, and it seems a good time to reflect on some of takeaways from my initial foray into the world of competitive data analysis. 
 
 Before diving in, I'll mention that I used Python 3 throughout my work, though R seems to work fine for many people as well. In the competition forums, nearly everyone seems to use one of the two. 
 
@@ -36,5 +36,7 @@ To check for feature interaction and quadratic effects, I ran sci-kit learn's Po
 One potential solution to the Gini problem was to modify the dataset to emphasize higher scores. I used the [UnbalancedDataset](https://github.com/fmfn/UnbalancedDataset) package to try a few methods to give greater weight to higher Hazard Scores. It seemed a multi-tiered SMOTE (progressively adding more of the heigher scores) over-sampler showed the most promise, but still performed roughly equal to or slightly worse than the original training data across all models. However, the fact that approximately doubling the sample size didn't affect performance says to me that there are probably gains to be made if I could figure out the right combination. A custom scoring metric to train models on would be ideal. 
 
 
-
 That's enough for one post! 
+
+
+**Addendum:** To my embarrassment, I got busy and completely missed the end of the competition. So I never got to try out ensembling methods and make a strong final contender. However, my individual model scores seem to have done alright in comparison with what people are saying on the competition forum, so that's good news! Have to leave some room for improvement, right?
