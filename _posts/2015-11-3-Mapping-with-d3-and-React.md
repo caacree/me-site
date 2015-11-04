@@ -16,7 +16,7 @@ For similar reasons, I kept some style changes attached to the zoom method. Usin
 
 Other than that, the main challenge was just getting the semantics down. Some tips on that:
 * If you're going to use d3 manipulations on a component, set it to be a variable in ComponentDidMount and/or ComponentDidUpdate.
- ``` javascript
+ ```
 componentDidMount() {
 	this.d3Node = d3.select(ReactDOM.findDOMNode(this));
 	...
