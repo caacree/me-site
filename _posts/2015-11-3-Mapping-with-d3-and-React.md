@@ -15,12 +15,13 @@ One difference between maps and most example apps I've seen so far is the amount
 For similar reasons, I kept some style changes attached to the zoom method. Using React would re-render the entire svg if I wanted to keep the strokes proportionally thin after zooming, but with d3 it's a quick style update. Again, normally React is fast enough, but for large datasets there is a noticeable lag in re-rendering the entire area. 
 
 Other than that, the main challenge was just getting the semantics down. Some tips on that:
-* If you're going to use d3 manipulations on a component, set it to be a variable in ComponentDidMount and/or ComponentDidUpdate. 
+* If you're going to use d3 manipulations on a component, set it to be a variable in ComponentDidMount and/or ComponentDidUpdate.
+```
 		componentDidMount() {
 			this.d3Node = d3.select(ReactDOM.findDOMNode(this));
 			...
  		}
-
+```
 * Save important variables in the object since components will re-render on update. For example, I needed to save my current zoom specs (translate and scale) so that whenever the component was updated I could reinitialize the zoom correctly. 
 * Use React for small updates, d3 for large ones. React really does make simpler code and I have no doubt will be easier to maintain, and is accordingly preferred when there's no penalty. I used React to update selections, mouseovers, and highlights, since those all only update one element at a time. 
 
