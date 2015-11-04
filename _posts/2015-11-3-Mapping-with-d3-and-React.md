@@ -15,7 +15,7 @@ One difference between maps and most example apps I've seen so far is the amount
 For similar reasons, I kept some style changes attached to the zoom method. Using React would re-render the entire svg if I wanted to keep the strokes proportionally thin after zooming, but with d3 it's a quick style update. Again, normally React is fast enough, but for large datasets there is a noticeable lag in re-rendering the entire area. 
 
 Other than that, the main challenge was just getting the semantics down. Some tips on that:
-* If you're going to use d3 manipulations on a component, set it to be a variable in ComponentDidMount and/or ComponentDidUpdate.
+* If you're going to use d3 manipulations on a component, set it to be a variable in ComponentDidMount and/or ComponentDidUpdate.  
  ```
 componentDidMount() {
 	this.d3Node = d3.select(ReactDOM.findDOMNode(this));
