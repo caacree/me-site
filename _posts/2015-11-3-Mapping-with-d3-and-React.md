@@ -46,14 +46,3 @@ SelectionStore.dispatchToken = AppDispatcher.register(function(action){
  });
  ```
  This can/will call the change event before your function has finished performing. In this case, it emitted the change before `setSelection` had a chance to change the state. So components tried to update the state before it had changed, and nothing happened. Putting the emitChange at the end of `setSelection` and similar methods makes it clear when the function is called and what will be returned. 
- 
-* Some things never make sense. I wasted a day trying to set hard panning limits on the map consistent across zoom scale. Various examples found online fell short, and trying to decipher how d3 changes translate values on each zoom was an exercise in frustration. I'm guessing it's some aspect of the Mercator projection, but in the end I just resorted to an ugly hack on the pan limits that keeps them stable enough no one will notice.
-
- ```
-let t = d3.event.translate,
-s = d3.event.scale,
-factors = [s*.4, 1.5-s*.5, s*1.1, 1.5-s*.7];
-t[0] = Math.min(width / 2 * (s-factors[0]), Math.max(width / 2 * (factors[3]-s), t[0]));
-t[1] = Math.min(height / 2 * (s - factors[2]) + 230 * s, Math.max(height / 2 * (factors[1] - s) - 230 * s, t[1]));
-```
- Beautiful. 
