@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Running Thoughts
+tags: fitness, running
 ---
 I've taken a somewhat lackadaisical approach to fitness in the past; mostly lifting, but rarely with any consistent diet and training. So progress was notably slower than otherwise. 
 
