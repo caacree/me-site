@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Lessons from a Kaggle Competition
-tags: Software, 
+tags: Software
 ---
 
 I'm currently in the final week of the [Liberty Mutual Group: Property Inspection Prediction](https://www.kaggle.com/c/liberty-mutual-group-property-inspection-prediction) competition on Kaggle, and it seems a good time to reflect on some of takeaways from my initial foray into the world of competitive data analysis. 
