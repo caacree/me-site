@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Mapping with d3 and React
+tags: Software
 ---
 I've been using React more in recent weeks, and really love the improvement over spaghetti JQuery DOM Manipulation. This past week I started working on integrating d3 into React. 
 
